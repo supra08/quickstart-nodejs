@@ -7,6 +7,9 @@ shared:
   # "repo_name:tag_label", where the "tag_label" is optional.
   # Docker image - https://hub.docker.com/r/library/node/
   image: node:6
+  subscribe: 
+    scmUrls:
+      - git@github.com:supra08/functional-workflow.git: [~commit, ~tags, ~release]
 
 # Jobs definition block
 # All pipelines have "main" by default, and is implicitly defined.
