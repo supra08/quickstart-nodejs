@@ -7,9 +7,10 @@ shared:
   # "repo_name:tag_label", where the "tag_label" is optional.
   # Docker image - https://hub.docker.com/r/library/node/
   image: node:6
-  subscribe: 
-    scmUrls:
-      - git@github.com:supra08/functional-workflow.git: ['~push', '~pull_request']
+
+subscribe: 
+  scmUrls:
+    - git@github.com:supra08/functional-workflow.git: ['~push', '~pull_request']
 
 # Jobs definition block
 # All pipelines have "main" by default, and is implicitly defined.
@@ -23,7 +24,7 @@ jobs:
     # Jobs defined with "requires: ~sd@123:main" are started by job "main" from pipeline "123".
     # Jobs defined with "requires: main" are started after "main" is done.
     # Jobs defined with "requires: [deploy-west, deploy-east] are started after "deploy-west" and "deploy-east" are both done running successfully.
-    requires: [~pr, ~commit]
+    requires: [~pr, ~commit, ~subscribe]
     # Steps is the ordered list of commands to execute.
     # Each step takes the form "step_name: command_to_run". The "step_name" is a
     # convenient label to reference it by. The "command_to_run" is the single 
