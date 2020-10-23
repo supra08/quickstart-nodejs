@@ -10,7 +10,7 @@ shared:
 
 subscribe: 
   scmUrls:
-    - git@github.com:supra08/functional-workflow.git: ['~push', '~pr']
+    - git@github.com:supra08/functional-workflow.git: ['~commit', '~pr']
 
 # Jobs definition block
 # All pipelines have "main" by default, and is implicitly defined.
